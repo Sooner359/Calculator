@@ -204,15 +204,20 @@ function operate() {
     }
     else if (operator.at(-1) === "/") {
         if (num1.length > 0 && num2.length > 0) {
+            if (num2.at(0) === 0) {
+            document.getElementById("screen").innerHTML = "Uh uh uh"
+            } else {
+                console.log(num1)
             num3 = (divide(num1.join(""), num2.join("")))
             num1 = [(divide(num1, num2.join("")))]
             num2 = []
             console.log(Math.round(num1 * 10)/10)
             document.getElementById("screen").innerHTML = Math.round(num3 * 10)/10
-        } else {
+        }
+     } else {
             console.log(num1, num2)
             num1.push(num2.join(""))
             num2 = []
         }
     }
-}
+    }
